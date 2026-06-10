@@ -1,0 +1,15 @@
+{
+  "name": "mediawiki/plyr-media-handler",
+  "description": "Plyr-based audio and video MediaHandler for MediaWiki without ffmpeg or transcoding.",
+  "type": "mediawiki-extension",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.4",
+    "james-heinrich/getid3": "^1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "MediaWiki\\Extension\\PlyrMediaHandler\\": "src/"
+    }
+  }
+}

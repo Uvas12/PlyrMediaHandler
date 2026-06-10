@@ -1,0 +1,17 @@
+{
+  "@metadata": {
+    "authors": [
+      "Isaac Rodrigo Valdes Velazquez"
+    ]
+  },
+  "plyrmediahandler-desc": "Reproductor ligero de audio y video con Plyr para MediaWiki, sin ffmpeg ni transcodificación.",
+  "plyrmediahandler-file-info": "Información multimedia",
+  "plyrmediahandler-duration": "Duración",
+  "plyrmediahandler-resolution": "Resolución",
+  "plyrmediahandler-mime": "Tipo MIME",
+  "plyrmediahandler-video-codec": "Códec de video",
+  "plyrmediahandler-audio-codec": "Códec de audio",
+  "plyrmediahandler-bitrate": "Bitrate",
+  "plyrmediahandler-recommended-syntax": "Sintaxis recomendada",
+  "plyrmediahandler-player-error": "No se pudo cargar el reproductor multimedia."
+}

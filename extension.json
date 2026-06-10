@@ -1,0 +1,145 @@
+{
+  "name": "PlyrMediaHandler",
+  "version": "1.0.0",
+  "author": [
+    "La rama azul"
+  ],
+  "url": "https://www.mediawiki.org/wiki/Extension:PlyrMediaHandler",
+  "descriptionmsg": "plyrmediahandler-desc",
+  "license-name": "GPL-2.0-or-later",
+  "type": "media",
+  "requires": {
+    "MediaWiki": ">= 1.45"
+  },
+  "AutoloadNamespaces": {
+    "MediaWiki\\Extension\\PlyrMediaHandler\\": "src/"
+  },
+  "MessagesDirs": {
+    "PlyrMediaHandler": [
+      "i18n"
+    ]
+  },
+  "Hooks": {
+    "BeforePageDisplay": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onBeforePageDisplay",
+    "FileUpload": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onFileUpload",
+    "ArticlePurge": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onArticlePurge",
+    "ImageOpenShowImageInlineBefore": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onImageOpenShowImageInlineBefore",
+    "ImagePageAfterImageLinks": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onImagePageAfterImageLinks",
+    "ImagePageFileHistoryLine": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onImagePageFileHistoryLine",
+    "SetupAfterCache": "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks::onSetupAfterCache",
+    "DeletePagesForGood::BeforePermanentFileDelete": [
+    "MediaWiki\\Extension\\PlyrMediaHandler\\DeletePagesForGoodIntegration::onBeforePermanentFileDelete"
+        ]
+  },
+  
+    "MediaHandlers": {
+      "video/mp4": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrVideoHandler",
+    
+      "video/x-matroska": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrVideoHandler",
+      "video/matroska": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrVideoHandler",
+      "application/x-matroska": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrVideoHandler",
+    
+      "application/ogg": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrOggHandler",
+      "application/opus": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+    
+      "audio/mpeg": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+      "audio/mp3": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+    
+      "audio/flac": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+      "audio/x-flac": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+    
+      "audio/opus": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+    
+      "audio/wav": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+      "audio/x-wav": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler",
+    
+      "audio/ogg": "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrOggHandler"
+    },
+    
+    "AutoloadClasses": {
+    "MediaWiki\\Extension\\PlyrMediaHandler\\Hooks": "src/Hooks.php",
+    "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrAudioHandler": "src/PlyrAudioHandler.php",
+    "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrOggHandler": "src/PlyrOggHandler.php",
+    "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrTransformOutput": "src/PlyrTransformOutput.php",
+    "MediaWiki\\Extension\\PlyrMediaHandler\\PlyrVideoHandler": "src/PlyrVideoHandler.php",
+    "MediaWiki\\Extension\\PlyrMediaHandler\\DeletePagesForGoodIntegration": "src/DeletePagesForGoodIntegration.php"
+    },
+
+  "ResourceModules": {
+    "ext.plyrMediaHandler": {
+      "localBasePath": "resources",
+      "remoteExtPath": "PlyrMediaHandler/resources",
+      "scripts": [
+        "lib/plyr/plyr.min.js",
+        "ext.plyrMediaHandler.js"
+      ],
+      "styles": [
+        "lib/plyr/plyr.css",
+        "ext.plyrMediaHandler.css"
+      ],
+      "dependencies": [
+        "mediawiki.util",
+        "jquery"
+      ],
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    "ext.plyrMediaHandler.visualEditor": {
+      "localBasePath": "resources",
+      "remoteExtPath": "PlyrMediaHandler/resources",
+      "scripts": [
+        "ext.plyrMediaHandler.ve.js"
+      ],
+      "styles": [
+        "ext.plyrMediaHandler.ve.css"
+      ],
+      "dependencies": [
+        "ext.visualEditor.core",
+        "mediawiki.util",
+        "jquery"
+      ],
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  },
+  "VisualEditorPluginModules": [
+    "ext.plyrMediaHandler.visualEditor"
+  ],
+  "config": {
+    "PlyrMediaHandlerDefaultVideoWidth": {
+      "value": 640
+    },
+    "PlyrMediaHandlerDefaultVideoHeight": {
+      "value": 360
+    },
+    "PlyrMediaHandlerDefaultAudioWidth": {
+      "value": 400
+    },
+    "PlyrMediaHandlerDefaultAudioHeight": {
+      "value": 54
+    },
+    "PlyrMediaHandlerMaxVideoWidth": {
+      "value": 1920
+    },
+    "PlyrMediaHandlerMaxAudioWidth": {
+      "value": 1200
+    },
+    "PlyrMediaHandlerMinVideoWidth": {
+      "value": 120
+    },
+    "PlyrMediaHandlerMinAudioWidth": {
+      "value": 180
+    },
+    "PlyrMediaHandlerLoadEveryPage": {
+      "value": true
+    },
+    "PlyrMediaHandlerUseNativeWhenPlyrMissing": {
+      "value": true
+    }
+  },
+  "manifest_version": 2
+}
