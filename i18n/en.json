@@ -1,7 +1,7 @@
 {
   "@metadata": {
     "authors": [
-      "Isaac Rodrigo Valdes Velazquez"
+      "La rama azul"
     ]
   },
   "plyrmediahandler-desc": "Lightweight Plyr-based audio and video player for MediaWiki without ffmpeg or transcoding.",
