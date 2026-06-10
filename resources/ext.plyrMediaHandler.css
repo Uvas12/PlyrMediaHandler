@@ -1,0 +1,468 @@
+.mw-plyr-wrapper {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.mw-plyr-video-wrapper .plyr--video {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Video sin deformación */
+.mw-plyr-video-wrapper video {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #000 !important;
+}
+
+/* Poster */
+.mw-plyr-video-wrapper video:not([poster]) {
+    background: linear-gradient(135deg, #111 0%, #222 50%, #111 100%);
+}
+
+.mw-plyr-video-wrapper video[poster] {
+    background-color: #000;
+    object-fit: contain !important;
+}
+
+.mw-plyr-video-wrapper .plyr__poster {
+    background-size: cover;
+    background-position: center center;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.mw-plyr-video-wrapper .plyr--video.plyr--playing .plyr__poster,
+.mw-plyr-video-wrapper .plyr--video:not(.plyr--paused) .plyr__poster {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.mw-plyr-poster-loading {
+    background: linear-gradient(135deg, #111 0%, #222 50%, #111 100%);
+}
+
+/* Tablas / historial */
+table .mw-plyr-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+table .mw-plyr-wrapper .plyr {
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+table .mw-plyr-wrapper .plyr__video-wrapper {
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+table .mw-plyr-wrapper .plyr__controls {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 4px 6px;
+    gap: 4px;
+}
+
+table .mw-plyr-wrapper .plyr__menu__container {
+    display: none;
+}
+
+table .mw-plyr-video-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 260px;
+    overflow: hidden;
+}
+
+table .mw-plyr-audio-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 190px;
+    max-width: 230px;
+    overflow: hidden;
+}
+
+table .mw-plyr-audio-wrapper .plyr {
+    min-width: 190px;
+    max-width: 230px !important;
+    overflow: hidden;
+}
+
+table .mw-plyr-audio-wrapper .plyr__controls {
+    min-width: 190px;
+    max-width: 230px;
+    overflow: hidden;
+}
+
+table .mw-plyr-audio-wrapper .plyr__control {
+    flex-shrink: 0;
+    padding: 5px;
+}
+
+table .mw-plyr-audio-wrapper .plyr__progress__container {
+    min-width: 70px;
+    flex: 1 1 auto;
+}
+
+table .mw-plyr-audio-wrapper .plyr__time {
+    display: none;
+}
+
+table .mw-plyr-audio-wrapper .plyr__volume {
+    display: none;
+}
+
+table .mw-plyr-audio-wrapper .plyr__menu,
+table .mw-plyr-audio-wrapper [data-plyr="settings"] {
+    display: none;
+}
+
+table .mw-plyr-video-wrapper .plyr__time {
+    font-size: 12px;
+}
+
+table .mw-plyr-video-wrapper .plyr__control {
+    padding: 5px;
+}
+
+table .mw-plyr-video-wrapper .plyr__progress__container {
+    min-width: 45px;
+}
+
+table .mw-plyr-video-wrapper video[poster],
+.filehistory .mw-plyr-video-wrapper video[poster],
+.wikitable .mw-plyr-video-wrapper video[poster],
+.mw-datatable .mw-plyr-video-wrapper video[poster] {
+    object-fit: cover !important;
+}
+
+.wikitable .mw-plyr-wrapper,
+.filehistory .mw-plyr-wrapper,
+.mw-datatable .mw-plyr-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.filehistory .mw-plyr-video-wrapper,
+.wikitable .mw-plyr-video-wrapper,
+.mw-datatable .mw-plyr-video-wrapper {
+    max-width: 260px;
+}
+
+.filehistory .mw-plyr-audio-wrapper,
+.wikitable .mw-plyr-audio-wrapper,
+.mw-datatable .mw-plyr-audio-wrapper {
+    min-width: 190px;
+    max-width: 230px;
+}
+
+.filehistory td,
+.filehistory th {
+    vertical-align: middle;
+}
+
+.filehistory .mw-plyr-wrapper .plyr__controls,
+.wikitable .mw-plyr-wrapper .plyr__controls,
+.mw-datatable .mw-plyr-wrapper .plyr__controls {
+    white-space: nowrap;
+}
+
+/* Pantalla completa: contenedor principal */
+.mw-plyr-video-wrapper .plyr--fullscreen-active,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback,
+.mw-plyr-video-wrapper .plyr:fullscreen,
+.mw-plyr-video-wrapper .plyr:-webkit-full-screen {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    background: #000 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    aspect-ratio: auto !important;
+}
+
+/* Pantalla completa: wrapper interno centrado */
+.mw-plyr-video-wrapper .plyr--fullscreen-active .plyr__video-wrapper,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback .plyr__video-wrapper,
+.mw-plyr-video-wrapper .plyr:fullscreen .plyr__video-wrapper,
+.mw-plyr-video-wrapper .plyr:-webkit-full-screen .plyr__video-wrapper {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    background: #000 !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Pantalla completa: video centrado y completo */
+.mw-plyr-video-wrapper .plyr--fullscreen-active video,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback video,
+.mw-plyr-video-wrapper .plyr:fullscreen video,
+.mw-plyr-video-wrapper .plyr:-webkit-full-screen video,
+.mw-plyr-video:fullscreen,
+.mw-plyr-video:-webkit-full-screen {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #000 !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    margin: auto !important;
+}
+
+/* Quitar redondeo en pantalla completa */
+.mw-plyr-video-wrapper .plyr--fullscreen-active,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback,
+.mw-plyr-video-wrapper .plyr--fullscreen-active .plyr__video-wrapper,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback .plyr__video-wrapper,
+.mw-plyr-video-wrapper .plyr--fullscreen-active video,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback video {
+    border-radius: 0 !important;
+}
+
+/* =========================================================
+   CONTROLES DE VIDEO
+   Modo normal: fade sin moverse.
+   Fullscreen: ocultado fuerte cuando Plyr añade hide-controls.
+   ========================================================= */
+
+/* Base: controles siempre en su posición */
+.mw-plyr-video-wrapper .plyr--video .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video:hover .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--paused .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--stopped .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--hide-controls .plyr__controls {
+    bottom: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    transition-property: opacity !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-in-out !important;
+}
+
+/* Modo normal: ocultar con fade, sin desplazamiento */
+.mw-plyr-video-wrapper .plyr--video.plyr--hide-controls:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback) .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--hide-controls:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback):hover .plyr__controls {
+    opacity: 0 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    transform: none !important;
+    translate: none !important;
+    bottom: 0 !important;
+}
+
+/* Modo normal: mostrar con fade, sin desplazamiento */
+.mw-plyr-video-wrapper .plyr--video:not(.plyr--hide-controls):not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback) .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback):hover .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback).plyr--paused .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback).plyr--stopped .plyr__controls {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    translate: none !important;
+    bottom: 0 !important;
+}
+
+/* Botón central: fade sin moverse */
+.mw-plyr-video-wrapper .plyr--video .plyr__control--overlaid,
+.mw-plyr-video-wrapper .plyr--video.plyr--hide-controls .plyr__control--overlaid {
+    transform: translate(-50%, -50%) !important;
+    transition-property: opacity !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-in-out !important;
+}
+
+.mw-plyr-video-wrapper .plyr--video.plyr--hide-controls:not(.plyr--fullscreen-active):not(.plyr--fullscreen-fallback) .plyr__control--overlaid {
+    opacity: 0 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Pantalla completa: ocultado fuerte */
+.mw-plyr-video-wrapper .plyr--fullscreen-active.plyr--hide-controls .plyr__controls,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback.plyr--hide-controls .plyr__controls,
+.mw-plyr-video-wrapper .plyr--fullscreen-active.plyr--hide-controls:hover .plyr__controls,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback.plyr--hide-controls:hover .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--fullscreen-active.plyr--hide-controls .plyr__controls,
+.mw-plyr-video-wrapper .plyr--video.plyr--fullscreen-fallback.plyr--hide-controls .plyr__controls {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: none !important;
+    translate: none !important;
+}
+
+/* Botón central en fullscreen */
+.mw-plyr-video-wrapper .plyr--fullscreen-active.plyr--hide-controls .plyr__control--overlaid,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback.plyr--hide-controls .plyr__control--overlaid {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Poster no debe tapar reproducción en fullscreen */
+.mw-plyr-video-wrapper .plyr--fullscreen-active.plyr--playing .plyr__poster,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback.plyr--playing .plyr__poster,
+.mw-plyr-video-wrapper .plyr--fullscreen-active:not(.plyr--paused) .plyr__poster,
+.mw-plyr-video-wrapper .plyr--fullscreen-fallback:not(.plyr--paused) .plyr__poster {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Clase manual de respaldo */
+.mw-plyr-video-wrapper .plyr.mw-plyr-force-hide-controls .plyr__controls,
+.mw-plyr-video-wrapper .plyr.mw-plyr-fullscreen-hide-controls .plyr__controls {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: none !important;
+    translate: none !important;
+}
+
+.mw-plyr-video-wrapper .plyr.mw-plyr-force-hide-controls .plyr__control--overlaid,
+.mw-plyr-video-wrapper .plyr.mw-plyr-fullscreen-hide-controls .plyr__control--overlaid {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.mw-plyr-video-wrapper .plyr.mw-plyr-force-hide-controls,
+.mw-plyr-video-wrapper .plyr.mw-plyr-fullscreen-hide-controls {
+    cursor: none !important;
+
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    overflow: visible;
+}
+
+.mw-plyr-video-wrapper {
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.mw-plyr-audio-wrapper {
+    min-width: 180px;
+    background: transparent;
+}
+
+.mw-plyr-wrapper .mw-plyr-player {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.mw-plyr-wrapper .plyr {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mw-plyr-wrapper .plyr__controls {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mw-plyr-wrapper .plyr__video-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #000 !important;
+}
+
+.mw-plyr-video {
+    background: #000;
+    height: auto;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
+
+.mw-plyr-audio {
+    min-width: 180px;
+    max-width: 100%;
+}
+
+.mw-plyr-native-fallback {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+}
+
+.mw-plyrmediahandler-info {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #c8ccd1;
+    background: #f8f9fa;
+}
+
+.mw-plyrmediahandler-info h2 {
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: 0;
+}
+
+.mw-plyrmediahandler-info ul {
+    margin-bottom: 0;
+}
+
+.mw-plyrmediahandler-history {
+    color: #54595d;
+    font-size: 90%;
+}
+
+/* Menú del engrane visible fuera de tablas */
+.mw-plyr-wrapper .plyr__menu__container {
+    display: block;
+    z-index: 9999;
+}
+
+/* Audio normal */
+.mw-plyr-audio-wrapper .plyr {
+    border: 2px solid var(--plyr-color-main, #00b2ff);
+    border-radius: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #fff;
+}
+
+.mw-plyr-audio-wrapper .plyr:hover {
+    box-shadow: 0 0 0 1px rgba(0, 178, 255, 0.15);
+}
+
+.mw-plyr-audio-wrapper .plyr__controls {
+    overflow: visible;
+}
+
+/* Video redondeado */
+.mw-plyr-video-wrapper .plyr,
+.mw-plyr-video-wrapper .plyr__video-wrapper,
+.mw-plyr-video-wrapper video {
+    border-radius: 14px;
+    overflow: hidden;
+}

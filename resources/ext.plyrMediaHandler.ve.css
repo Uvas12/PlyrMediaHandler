@@ -1,0 +1,27 @@
+.ve-ui-surface .mw-plyr-player {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.ve-ui-surface .mw-plyr-video {
+    display: block;
+    background: #000;
+    height: auto !important;
+}
+
+.ve-ui-surface .mw-plyr-audio {
+    display: block;
+    height: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
+}
+
+.ve-ui-surface figure .mw-plyr-player {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ve-ui-surface .mw-plyr-video[height],
+.ve-ui-surface .mw-plyr-audio[height] {
+    height: auto;
+}
