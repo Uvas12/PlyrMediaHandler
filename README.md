@@ -1,4 +1,4 @@
-# PlyrMediaHandler
+
 # PlyrMediaHandler
 
 **PlyrMediaHandler** is a MediaWiki extension that adds modern HTML5 audio and video playback using [Plyr](https://plyr.io/).
